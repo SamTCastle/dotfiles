@@ -12,6 +12,3 @@ alias ls="ls -a --color"
 
 # Android shortcut
 alias android-studio="/opt/android/android-studio/bin/studio.sh"
-
-# clear half of the terminal.
-alias mid="tput cup $(stty size|awk '{print $1/2;}') 0 && tput ed"
