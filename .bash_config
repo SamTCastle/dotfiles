@@ -4,7 +4,7 @@
 PS1="\[\e[1;32m\]\u@\h:\w\[\e[m\]\n\[\e[1;34m\]\A \$>\[\e[0m\] "
 
 # Change tab-completion to cycle through options, rather than list.
-bind '"\t":menu-complete'
+#bind '"\t":menu-complete'
 
 ##################################
 # Custom Functions
