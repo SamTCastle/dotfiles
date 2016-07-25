@@ -10,5 +10,7 @@ alias egrep='egrep --color=auto'
 #alias ls="ls --color=auto"
 alias ls="ls -a --color"
 
+alias cal="cal -3 --color=auto"
+
 # Android shortcut
 alias android-studio="/opt/android/android-studio/bin/studio.sh"
