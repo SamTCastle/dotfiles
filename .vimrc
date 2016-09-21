@@ -35,6 +35,9 @@ set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 
+set hidden      " allow unsaved buffers. -- Sam edit.
+set noswapfile  " -- Sam edit
+
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
 
@@ -56,7 +59,7 @@ endif
 if &t_Co > 2 || has("gui_running")
   syntax on
   set hlsearch
-  colorscheme vividchalk
+  colorscheme distinguished
 
 endif
 
