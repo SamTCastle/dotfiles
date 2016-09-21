@@ -29,7 +29,12 @@ font pango:DejaVu Sans Mono 10 # -- Sam edit
 
 # -- Sam edit
 # Execute some custom scripts at startup.
+
+# Monitor setup
 exec --no-startup-id $HOME/.config/i3/xrandr_startup.sh
+
+# Wallpaper setup
+exec --no-startup-id feh --bg-center $HOME/Pictures/castle_mountain_banff.jpg --bg-max $HOME/Pictures/seattle_daylight.jpg
 
 # -- Sam edit
 # Name the workspaces
