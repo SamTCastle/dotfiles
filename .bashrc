@@ -3,8 +3,14 @@ export JAVA_HOME=/opt/java/jdk1.8.0_65/
 export JRE_HOME=/opt/java/jdk1.8.0._65/jre
 export PATH=$PATH:/opt/java/jdk1.8.0_65/bin:/opt/java/jdk1.8.0_65/jre/bin
 
+# Change default editor.
+export EDITOR=vim
+
 # Source RVM for ruby management.
 source "$HOME/.rvm/scripts/rvm"
+
+# Load default ranger config.
+export RANGER_LOAD_DEFAULT_RC=FALSE
 
 # Silence bell sound.
 set bell-style none
@@ -23,3 +29,5 @@ fi
 if [ -f "$HOME/.ls_colors" ]; then
 	source "$HOME/.ls_colors"
 fi
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
