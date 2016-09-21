@@ -36,7 +36,11 @@ set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 
 set hidden      " allow unsaved buffers. -- Sam edit.
-set noswapfile  " -- Sam edit
+" Put swap, backup, and undo files in a central location.  " -- Sam edit
+set swapfile  " -- Sam edit
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+set undodir=~/.vim/undo//
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
