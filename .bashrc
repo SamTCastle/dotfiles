@@ -12,6 +12,10 @@ source "$HOME/.rvm/scripts/rvm"
 # Load default ranger config.
 export RANGER_LOAD_DEFAULT_RC=FALSE
 
+# Use source-highlight to highlight with less.
+export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
+export LESS=' -R '
+
 # Silence bell sound.
 set bell-style none
 
