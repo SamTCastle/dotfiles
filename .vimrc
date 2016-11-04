@@ -120,6 +120,7 @@ set tabstop=2		  " number of visual spaces per TAB when reading a file
 set softtabstop=2	" number of spaces per TAB when editing
 set shiftwidth=2	" number of spaces per indent
 set expandtab		  " TABs are spaces
+autocmd Filetype python setlocal ts=4 sw=4 sts=4 " Special settings for Python.
 " }}}
 
 " UI Config {{{
@@ -129,6 +130,12 @@ set showcmd	    " show command in bottom bar
 set wildmenu	  " visual autocomplete for command menu
 set lazyredraw	" redraw screen only when necessary, not during macros
 set showmatch	  " highlight matching [{()}]
+" }}}
+
+" Modes {{{
+inoremap {<CR>  {<CR>}<Esc>O " Map Caps Lock to Esc from insert mode. 
+inoremap [<CR>  [<CR>]<Esc>O " Map Caps Lock to Esc from insert mode. 
+inoremap (<CR>  (<CR>)<Esc>O " Map Caps Lock to Esc from insert mode. 
 " }}}
 
 " Searching {{{
@@ -150,7 +157,12 @@ set foldmethod=indent " fold based in indent level
 
 " Movement {{{
 " 
+set ignorecase " Ignore capitals?
 " Change movement for normal, visual+select, and operator-pending modes.
+noremap  <buffer> <silent> k gk " move vertically by visual line
+noremap  <buffer> <silent> j gj " move vertically by visual line
+noremap  <buffer> <silent> 0 g0
+noremap  <buffer> <silent> $ g$
 "noremap j gj    " move vertically by visual line
 "noremap k gk    " same
 " Repeat for visual mode.
