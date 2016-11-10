@@ -1,7 +1,17 @@
 # Additional configurations for bash shell.
 
+# Configure command prompt + colors
+function parse_git_branch () {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+  }
+   
+#RED="\[\033[0;31m\]"
+YELLOW="\[\033[0;33m\]"
+#GREEN="\[\033[0;32m\]"
+#NO_COLOR="\[\033[0m\]"
+
 # Change prompt.
-PS1="\[\e[1;32m\]\u@\h:\w\[\e[m\]\n\[\e[1;34m\]\A \$>\[\e[0m\] "
+PS1="\[\e[1;32m\]\u@\h:\w\[\e[m\]$YELLOW\$(parse_git_branch)\n\[\e[1;34m\]\A \$>\[\e[0m\] "
 
 # Change tab-completion to cycle through options, rather than list.
 #bind '"\t":menu-complete'
