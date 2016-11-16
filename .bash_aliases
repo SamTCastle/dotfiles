@@ -16,8 +16,10 @@ alias cal="cal -3 --color=auto"
 # i3 lock settings. use black color instead of default white.
 alias i3lock='i3lock -c 000000'
 
-# Nemo file browser. Don't open desktop view.
-alias nemo='nemo --no-desktop'
-
 # Android shortcut
 #alias android-studio="/opt/android/android-studio/bin/studio.sh"
+
+# Rsync shortcuts
+alias rsync2server='rsync -avtu -e ssh /home/stcastle/Documents/ stcastle@recycle.cs.washington.edu:/homes/gws/stcastle/Documents/'   
+
+alias rsync2local='rsync -avtu -e ssh stcastle@recycle.cs.washington.edu:/homes/gws/stcastle/Documents/ /home/stcastle/Documents/' 
