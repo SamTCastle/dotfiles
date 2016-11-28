@@ -9,6 +9,7 @@ alias egrep='egrep --color=auto'
 
 #alias ls="ls --color=auto"
 alias ls="ls -a --color"
+alias ll="ls -l"
 
 # calendar
 alias cal="ncal -3 --color=auto"
