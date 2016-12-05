@@ -22,3 +22,8 @@ PS1="\[\e[1;32m\]\u@\h:\w\[\e[m\]$YELLOW\$(parse_git_branch)\n\[\e[1;34m\]\A \$>
 
 # clear half of the terminal.
 mid () { tput cup $(stty size|awk '{print $1/2;}') 0; tput ed; }
+
+# Render and display markdown files.
+rmd () {
+  pandoc $1 | lynx -stdin
+}
