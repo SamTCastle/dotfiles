@@ -159,10 +159,16 @@ set foldmethod=indent " fold based in indent level
 " 
 set ignorecase " Ignore capitals?
 " Change movement for normal, visual+select, and operator-pending modes.
-noremap  <buffer> <silent> k gk " move vertically by visual line
-noremap  <buffer> <silent> j gj " move vertically by visual line
-noremap  <buffer> <silent> 0 g0
-noremap  <buffer> <silent> $ g$
+" move vertically by visual line
+noremap <buffer> <silent> k gk
+" move vertically by visual line
+noremap <buffer> <silent> j gj
+"vnoremap <buffer> <silent> k gk
+"onoremap <buffer> <silent> k gk
+"vnoremap <buffer> <silent> j gj
+"onoremap <buffer> <silent> j gj
+"noremap  <buffer> <silent> 0 g0
+"noremap  <buffer> <silent> $ g$
 "noremap j gj    " move vertically by visual line
 "noremap k gk    " same
 " Repeat for visual mode.
