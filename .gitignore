@@ -1,0 +1,8 @@
+# Vim stuff
+*.swp
+
+# Python stuff
+*.pyc
+
+# Mac Stuff
+.DS_STORE
