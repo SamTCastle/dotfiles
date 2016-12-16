@@ -1,13 +1,23 @@
 # Add java to paths.
-export JAVA_HOME=/opt/java/jdk1.8.0_65/
-export JRE_HOME=/opt/java/jdk1.8.0._65/jre
-export PATH=$PATH:/opt/java/jdk1.8.0_65/bin:/opt/java/jdk1.8.0_65/jre/bin
+if [ -d "/opt/java/jkd1.8.0_65" ]; then
+  export JAVA_HOME=/opt/java/jdk1.8.0_65/
+  export JRE_HOME=/opt/java/jdk1.8.0._65/jre
+  export PATH=$PATH:/opt/java/jdk1.8.0_65/bin:/opt/java/jdk1.8.0_65/jre/bin
+fi
 
 # Change default editor.
 export EDITOR=vim
 
-# Source RVM for ruby management.
-source "$HOME/.rvm/scripts/rvm"
+# Add local scripts folder to paths.
+if [ -d "$HOME/scripts/" ]; then
+  export PATH=$PATH:$HOME/scripts/
+fi
+
+# Source RVM for ruby management and add to PATH for scripting.
+if [ -d "$HOME/.rmv/" ]; then
+  source "$HOME/.rvm/scripts/rvm"
+  export PATH="$PATH:$HOME/.rvm/bin"
+fi
 
 # Load default ranger config.
 export RANGER_LOAD_DEFAULT_RC=FALSE
@@ -33,5 +43,3 @@ fi
 if [ -f "$HOME/.ls_colors" ]; then
 	source "$HOME/.ls_colors"
 fi
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
