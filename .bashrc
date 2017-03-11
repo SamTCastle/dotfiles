@@ -9,8 +9,8 @@ fi
 export EDITOR=vim
 
 # Add local scripts folder to paths.
-if [ -d "$HOME/scripts/" ]; then
-  export PATH=$PATH:$HOME/scripts/
+if [ -d "$HOME/.scripts/" ]; then
+  export PATH=$PATH:$HOME/.scripts/
 fi
 
 # Source RVM for ruby management and add to PATH for scripting.
