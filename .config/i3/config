@@ -9,7 +9,8 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod4
+set $mod Mod1
+#set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -18,7 +19,7 @@ set $mod Mod4
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
-font pango:DejaVu Sans Mono 10 # -- Sam edit
+font pango:DejaVu Sans Mono 35 # -- Sam edit
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -31,17 +32,42 @@ font pango:DejaVu Sans Mono 10 # -- Sam edit
 # Execute some custom scripts at startup.
 
 # Monitor setup
-exec --no-startup-id $HOME/.config/i3/xrandr_startup.sh
+#exec --no-startup-id $HOME/.config/i3/xrandr_startup.sh
+
+# Wireless setup
+exec --no-startup-id nm-applet
+
+# Change direction of vertical scrolling.
+exec --no-startup-id synclient VertScrollDelta=-68
 
 # Wallpaper setup
-exec --no-startup-id feh --bg-center $HOME/Pictures/castle_mountain_banff.jpg --bg-max $HOME/Pictures/seattle_daylight.jpg
+#exec --no-startup-id feh --bg-center $HOME/Pictures/castle_mountain_banff.jpg --bg-max $HOME/Pictures/seattle_daylight.jpg
 
 # -- Sam edit
 # Name the workspaces
-set workspace 1 to "1: term"
-set workspace 2 to "2: www"
+#set workspace 1 to "1: term"
+#set workspace 2 to "2: www"
 #set $tag1 "1: term"
 #set $tag2 "2: www"
+
+# -- Sam edit
+# Multimedia function keys
+#bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+unmute
+#bindsym XF86AudioMute exec amixer -q set Master toggle
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# Screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20
+
+# Toggle touchpad on and off
+#bindsym Menu exec /home/stcastle/toggletouchpad.sh
+bindsym $mod+F1 exec /home/stcastle/.scripts/toggletouchpad.sh
+
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -51,12 +77,14 @@ bindsym $mod+Return exec i3-sensible-terminal
 
 # -- Sam edit
 # switch to instance of web browser
-bindsym $mod+apostrophe [class="google-chrome"] focus
+bindsym $mod+apostrophe [class="chromium-browser"] focus
 # start new web browser
-bindsym $mod+Shift+apostrophe exec google-chrome
+bindsym $mod+Shift+apostrophe exec chromium-browser
 
 # kill focused window
 bindsym $mod+Shift+q kill
+# This doesn't seem to be working
+bindsym $mod+Shift+x exec xkill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run # -- Sam edit
@@ -70,6 +98,9 @@ bindsym $mod+d exec rofi -show run -font "ubuntu mono 18" -fg "#505050" -bg "#00
 
 # Use rofi to see open windows -- Sam edit
 bindsym $mod+Tab exec rofi -show window -font "ubuntu mono 18" -fg "#505050" -bg "#000000" -hlfg "#ffb964" -hlbg "#000000" -width 30 -lines 5 -padding 20 -separator-style none -hide-scrollbar -bw 4 -bc "#111111" -run-list-command
+
+# Execute Qnotero, a Zotero search bar.
+bindsym $mod+q exec qnotero
 
 # change focus
 #bindsym $mod+j focus left
@@ -140,8 +171,10 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+1 workspace number 1
-bindsym $mod+2 workspace number 2
+#bindsym $mod+1 workspace number 1
+#bindsym $mod+2 workspace number 2
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
 bindsym $mod+3 workspace 3
 bindsym $mod+4 workspace 4
 bindsym $mod+5 workspace 5
@@ -168,8 +201,10 @@ bindsym $mod+Shift+Left move container to workspace prev
 bindsym $mod+Shift+Right move container to workspace next
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number 1
-bindsym $mod+Shift+2 move container to workspace number 2
+#bindsym $mod+Shift+1 move container to workspace number 1
+#bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
 bindsym $mod+Shift+3 move container to workspace 3
 bindsym $mod+Shift+4 move container to workspace 4
 bindsym $mod+Shift+5 move container to workspace 5
@@ -229,3 +264,25 @@ bar {
 	#position top # -- Sam edit
 	#position bottom # -- Sam edit
 }
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+#bar {
+        #status_command conky
+        #status_command i3status
+        #tray_output primary
+        #position bottom
+        #font -xos4-terminus-medium-r-normal--12-120-72-72-C-60-iso8859-1
+        # font -*-proggysquaresz-medium-r-normal-*-11-80-*-*-*-*-iso8859-1
+    #workspace_buttons yes
+        #colors  {
+        #background #0F0F0F
+        #statusline #D5D5D5
+        #focused_workspace #F5F5FF #7FB256
+        #active_workspace #E5E5E5 #5697B2
+        #inactive_workspace #E5E5E5 #5697B2
+        #urgent_workspace #E5E5E5 #BC9B54
+#}
+        #volume {
+#}
+#}
