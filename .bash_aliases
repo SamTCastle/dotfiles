@@ -19,6 +19,8 @@ alias i3lock='i3lock -c 000000'
 
 # Nemo file browser. Don't open desktop view.
 alias nemo='nemo --no-desktop'
+# Also for nautilus file browser.
+alias nautilus='nautilus --no-desktop'
 
 # Android shortcut
 #alias android-studio="/opt/android/android-studio/bin/studio.sh"
