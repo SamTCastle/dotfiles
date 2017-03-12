@@ -37,6 +37,15 @@ font pango:DejaVu Sans Mono 35 # -- Sam edit
 # Wireless setup
 exec --no-startup-id nm-applet
 
+# Show volume icon in system tray.
+exec --no-startup-id pasystray
+
+# Show volume indicator when changing volume.
+exec --no-startup-id xfce4-volumed
+
+# Bluetooth startup
+exec --no-startup-id blueman-applet
+
 # Change direction of vertical scrolling.
 exec --no-startup-id synclient VertScrollDelta=-68
 
