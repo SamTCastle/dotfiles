@@ -114,7 +114,13 @@ bindsym $mod+q exec qnotero
 
 # Take a screenshot based on selection, name it appropriately,
 # and move it to the screenshots folder.
-bindsym --release Print exec scrot '%Y-%m-%d_screenshot_$wx$h.png' -s -e 'mv $f ~/Pictures/screenshots/ && sxiv ~/Pictures/screenshots/$f'
+bindsym --release Print exec scrot '%Y-%m-%d_%H:%M:%S_screenshot_$wx$h.png' -s -e 'mv $f ~/Pictures/screenshots/ && sxiv ~/Pictures/screenshots/$f'
+
+# Press shift to screenshot focused window.
+bindsym --release Shift+Print exec scrot '%Y-%m-%d_%H:%M:%S_screenshot_$wx$h.png' -u -e 'mv $f ~/Pictures/screenshots/ && sxiv ~/Pictures/screenshots/$f'
+
+# Press mod and shift to take screenshot across multiple displays.
+bindsym --release Control+Shift+Print exec scrot '%Y-%m-%d_%H:%M:%S_screenshot_$wx$h.png' -m -e 'mv $f ~/Pictures/screenshots/ && sxiv ~/Pictures/screenshots/$f'
 
 # change focus
 #bindsym $mod+j focus left
