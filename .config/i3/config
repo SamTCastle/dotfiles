@@ -41,7 +41,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id pasystray
 
 # Show volume indicator when changing volume.
-exec --no-startup-id xfce4-volumed
+#exec --no-startup-id xfce4-volumed
 
 # Bluetooth startup
 exec --no-startup-id blueman-applet
@@ -51,6 +51,7 @@ exec --no-startup-id synclient VertScrollDelta=-68
 
 # Wallpaper setup
 #exec --no-startup-id feh --bg-center $HOME/Pictures/castle_mountain_banff.jpg --bg-max $HOME/Pictures/seattle_daylight.jpg
+exec --no-startup-id $HOME/.fehbg
 
 # -- Sam edit
 # Name the workspaces
@@ -110,6 +111,10 @@ bindsym $mod+Tab exec rofi -show window -font "ubuntu mono 18" -fg "#505050" -bg
 
 # Execute Qnotero, a Zotero search bar.
 bindsym $mod+q exec qnotero
+
+# Take a screenshot based on selection, name it appropriately,
+# and move it to the screenshots folder.
+bindsym --release Print exec scrot '%Y-%m-%d_screenshot_$wx$h.png' -s -e 'mv $f ~/Pictures/screenshots/ && sxiv ~/Pictures/screenshots/$f'
 
 # change focus
 #bindsym $mod+j focus left
