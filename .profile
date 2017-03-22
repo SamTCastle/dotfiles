@@ -26,13 +26,12 @@ if [ -f "/home/stcastle/.Xmodmap" ] ; then
   xmodmap /home/stcastle/.Xmodmap
 fi
 
-# Use Spacebar as a Modifier
-spare_modifier="Hyper_L"
-#spare_modifier="Super_R"
-# Find keycode for Hyper_L from modmap file, generated as follows:
-#   xmodmap -pke > modmap
-#   xmodmap -pm >> modmap
-xmodmap -e "keycode 65 = $spare_modifier"
-#xmodmap -e "add Hyper_L = $spare_modifier"
-xmodmap -e "keycode any = space"
-xcape -e "$spare_modifier=space"
+## Use Spacebar as a Modifier
+#spare_modifier="Hyper_L"
+## Find keycode for Hyper_L from modmap file, generated as follows:
+##   xmodmap -pke > modmap
+##   xmodmap -pm >> modmap
+#xmodmap -e "keycode 65 = $spare_modifier"
+##xmodmap -e "add Hyper_L = $spare_modifier"
+#xmodmap -e "keycode any = space"
+#xcape -e "$spare_modifier=space"

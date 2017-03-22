@@ -1,6 +1,14 @@
 ! Attempt to use space as modifier key.
-clear mod3
-clear mod4
-add mod3 = Hyper_L
-!add mod3 = Super_R
-add mod4 = Super_L Super_R
+!clear mod3
+!clear mod4
+!add mod3 = Hyper_L
+!add mod4 = Super_L Super_R
+
+!
+! Swap Caps_Lock and Escape
+!
+
+remove Lock = Caps_Lock
+keysym Escape = Caps_Lock
+keysym Caps_Lock = Escape
+add Lock = Caps_Lock
