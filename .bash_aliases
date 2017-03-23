@@ -31,3 +31,6 @@ alias rsync2server='rsync -avtu -e ssh /home/stcastle/Documents/ stcastle@recycl
 alias rsync2local='rsync -avtu -e ssh stcastle@recycle.cs.washington.edu:/homes/gws/stcastle/Documents/ /home/stcastle/Documents/' 
 
 alias rsyncboth='echo -e "\nrsync2server" && rsync2server && echo -e "\nrsync2local" && rsync2local'
+
+# Shortcut for openinng vimwiki index file.
+alias vw='vim /home/stcastle/Documents/vimwiki/index.md'

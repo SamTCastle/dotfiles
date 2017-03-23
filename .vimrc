@@ -13,6 +13,12 @@
 "  for MS-DOS and Win32:  $VIM\_vimrc
 "	    for OpenVMS:  sys$login:.vimrc
 
+" Execute pathogen at startup
+execute pathogen#infect()
+
+"filetype plugin indent on
+"syntax on
+
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
   finish
@@ -63,7 +69,8 @@ endif
 if &t_Co > 2 || has("gui_running")
   syntax on
   set hlsearch
-  colorscheme distinguished
+  "colorscheme distinguished
+  colorscheme new-moon
 
 endif
 
@@ -133,9 +140,6 @@ set showmatch	  " highlight matching [{()}]
 " }}}
 
 " Modes {{{
-inoremap {<CR>  {<CR>}<Esc>O " Map Caps Lock to Esc from insert mode. 
-inoremap [<CR>  [<CR>]<Esc>O " Map Caps Lock to Esc from insert mode. 
-inoremap (<CR>  (<CR>)<Esc>O " Map Caps Lock to Esc from insert mode. 
 " }}}
 
 " Searching {{{
@@ -181,4 +185,17 @@ set noerrorbells visualbell t_vb=
 if has('autocmd')
   autocmd GUIEnter * set visualbell t_vb=
 endif
+" }}}
+
+" Custom {{{
+
+" vimwiki with markdown support
+let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+" helppage -> :h vimwiki-syntax
+
+" vim-instant-markdown - Instant Markdown previews from Vim
+" https://github.com/suan/vim-instant-markdown
+let g:instant_markdown_autostart = 0  " disable autostart
+map <leader>md :InstantMarkdownPreview<CR>
+
 " }}}
