@@ -34,3 +34,6 @@ alias rsyncboth='echo -e "\nrsync2server" && rsync2server && echo -e "\nrsync2lo
 
 # Shortcut for openinng vimwiki index file.
 alias vw='vim /home/stcastle/Documents/vimwiki/index.md'
+
+# Shortcut for reloading mapped settings.
+alias xm='xmodmap /home/stcastle/.Xmodmap'
