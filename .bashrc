@@ -29,6 +29,11 @@ export LESS=' -R '
 # Silence bell sound.
 set bell-style none
 
+# Add bash profile file if it exists.
+if [ -f "$HOME/.bash_profile" ]; then
+  source "$HOME/.bash_profile"
+fi
+
 # Add bash alias file if it exists.
 if [ -f "$HOME/.bash_aliases" ]; then
 	source "$HOME/.bash_aliases"
@@ -43,3 +48,10 @@ fi
 if [ -f "$HOME/.ls_colors" ]; then
 	source "$HOME/.ls_colors"
 fi
+
+# pew virtualenv wrapper for python
+export WORKON_HOME=$HOME/Documents/Code/Python/.venv
+export PROJECT_HOME=$HOME/Documents/Code/Python
+#source /usr/local/bin/virtualenvwrapper.sh
+# Display the virtual environment name in the terminal prompt.
+#source $(pew shell_config)
