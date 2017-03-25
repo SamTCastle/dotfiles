@@ -50,8 +50,8 @@ if [ -f "$HOME/.ls_colors" ]; then
 fi
 
 # pew virtualenv wrapper for python
-export WORKON_HOME=$HOME/Documents/Code/Python/.venv
-export PROJECT_HOME=$HOME/Documents/Code/Python
+export WORKON_HOME=$HOME/.venv
+export PROJECT_HOME=$HOME/Documents/code/python
 #source /usr/local/bin/virtualenvwrapper.sh
 # Display the virtual environment name in the terminal prompt.
 #source $(pew shell_config)
