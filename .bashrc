@@ -29,11 +29,6 @@ export LESS=' -R '
 # Silence bell sound.
 set bell-style none
 
-# Add bash profile file if it exists.
-if [ -f "$HOME/.bash_profile" ]; then
-  source "$HOME/.bash_profile"
-fi
-
 # Add bash alias file if it exists.
 if [ -f "$HOME/.bash_aliases" ]; then
 	source "$HOME/.bash_aliases"
