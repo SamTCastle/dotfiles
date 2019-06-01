@@ -123,8 +123,8 @@ endif
 " Sam edits below
  
 " Spaces and Tabs {{{
-set tabstop=2		  " number of visual spaces per TAB when reading a file
-set softtabstop=2	" number of spaces per TAB when editing
+"set tabstop=2		  " number of visual spaces per TAB when reading a file
+"set softtabstop=2	" number of spaces per TAB when editing
 set shiftwidth=2	" number of spaces per indent
 set expandtab		  " TABs are spaces
 autocmd Filetype python setlocal ts=4 sw=4 sts=4 " Special settings for Python.
